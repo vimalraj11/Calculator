@@ -1,0 +1,15 @@
+.card {
+    position: absolute;
+    width: 83%;
+    top: 15px;
+    height: 44%;
+    left: 25%;
+}
+
+.row {
+    margin: 30px;
+}
+
+.card .d-flex {
+    margin: 10px;
+}

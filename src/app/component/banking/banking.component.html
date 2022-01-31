@@ -1,0 +1,95 @@
+<div class="container-fluid bg-primary">
+    <div class="card">
+        <div class="price">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Principal Amount</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" [(ngModel)]="principal">
+                </div>
+            </div>
+        </div>
+        <div class="rio">
+            <div class="row">
+                <div class="col-sm-6"><label>Rate of Interest</label></div>
+                <div class="col-sm-6">
+                    <input disabled type="number" value="{{selectedloan.precentage}}" placeholder="Choose your EMI" [(ngModel)]="rate" [ngStyle]="{'background-color': selectedloan.color}">
+                </div>
+            </div>
+        </div>
+
+        <div class="time">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Time (In Months)</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" [(ngModel)]="time">
+                </div>
+            </div>
+        </div>
+        <div class="type">
+            <div class=" row">
+                <div class="col-sm-6">
+                    <label> Choose Your Loan</label></div>
+                <div class="col-sm-6">
+                    <select [(ngModel)]="selectedloan" [compareWith]="compare">
+                    <option *ngFor="let myLoan of loans" [ngStyle]="{'background-color': myLoan.color}" [ngValue]="myLoan">{{myLoan.name}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <div class="result">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Total Amount</label></div>
+                <div class="col-sm-6">
+                    <input type="number" disabled [(ngModel)]="amt">
+                </div>
+            </div>
+        </div>
+        <div class="emi">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>simpleInterest</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" disabled [(ngModel)]="si">
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-success" (click)="simpleInterest()">
+                        Calculate
+                    </button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-warning" [routerLink]="['','payment']">
+                        Payment
+                    </button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-primary" [routerLink]="['','add-account']">
+                        Add Account
+                    </button>
+                </div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Months</th>
+                <th>EMI (Price)</th>
+            </tr>
+            <tr *ngFor="let month of months">
+                <td>{{month.no}}</td>
+                <td>{{month.name}}</td>
+                <td>{{monthlyPay}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

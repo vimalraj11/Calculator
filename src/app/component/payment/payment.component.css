@@ -1,0 +1,13 @@
+.card {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    padding: 20px;
+    top: 45px;
+    height: 274px;
+    margin: 34px;
+}
+
+.card .row {
+    margin: 10px;
+}

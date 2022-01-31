@@ -1,0 +1,23 @@
+.card {
+    position: absolute;
+    width: 60%;
+    top: 15px;
+    left: 25%;
+    padding: 20px;
+}
+
+.card .row {
+    margin: 10px;
+}
+
+.card .d-flex {
+    margin: 10px;
+}
+
+.card .d-flex button {
+    width: 20%;
+    font-size: x-large;
+    font-family: monospace;
+    font-style: unset;
+    font-weight: bolder;
+}
